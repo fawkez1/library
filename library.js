@@ -18,3 +18,19 @@ function favoriteAnimal(animal) {
     return animal + " is my favorite animal";
 }
 
+
+// age-checker version 1
+function checkAge(age) {
+    return (age >= 18) || confirm ("allowance?");
+}
+// age-checker version 2
+function checkAge(age) {
+    return (age >= 18) ? confirm("allowance?");
+}
+// age-checker with prompt output
+function checkAge(age) {
+    return (age >= 18) ? true : confirm("allowance?");
+}
+const getAge = prompt("type your age");
+let resultAge = checkAge(getAge);
+alert(resultAge);
