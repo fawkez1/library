@@ -1,4 +1,16 @@
-// Eventlistener with input and output box
+// 1. (13) Eventlistener with input and ouput box
+// 2. (28) Age-Checker
+// 3. (50) Counting loop, FizzBuzz.
+
+
+
+
+
+
+
+
+
+
 /*
 <body>
     <input class="inputBox" type="text" placeholder="Type in your favorite type of animal...">
@@ -27,6 +39,7 @@ function checkAge(age) {
 function checkAge(age) {
     return (age >= 18) ? confirm("allowance?");
 }
+
 // age-checker with prompt output
 function checkAge(age) {
     return (age >= 18) ? true : confirm("allowance?");
@@ -34,3 +47,10 @@ function checkAge(age) {
 const getAge = prompt("type your age");
 let resultAge = checkAge(getAge);
 alert(resultAge);
+
+//Counting loop. Displays every number, until i reaches the value of 'number'. parseInt converts strings to numbers. fizzbuzz.
+let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
+
+for (let i = 1; i <= answer; i++) {
+  console.log(i);
+}
