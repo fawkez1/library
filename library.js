@@ -2,7 +2,7 @@
 // 2. (28) Age-Checker
 // 3. (50) Counting loop, FizzBuzz.
 // 4. (58) Removing multiple items from an array and returning the result
-
+// 5. (78) Leap Years
 
 
 
@@ -73,3 +73,17 @@ const removeFromArray = function(list, ...number) {
     }
     return list;
     };
+
+
+    // Leap Years
+    const leapYears = function(year) {
+        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+            return true;
+          } else {
+            return false;
+          }
+        
+    };
+    
+    // Do not edit below this line
+    module.exports = leapYears;
