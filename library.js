@@ -3,7 +3,7 @@
 // 3. (50) Counting loop, FizzBuzz.
 // 4. (58) Removing multiple items from an array and returning the result
 // 5. (78) Leap Years
-
+// 6. (94) Greedy Algorithm (see also in 'function-library' folder)
 
 
 
@@ -87,3 +87,38 @@ const removeFromArray = function(list, ...number) {
     
     // Do not edit below this line
     module.exports = leapYears;
+
+
+
+
+    // Greedy Algorithm
+    function greedyChange(amount) {
+        // Definiere die verfügbaren Münz-Nennwerte in aufsteigender Reihenfolge.
+        const coinValues = [25, 10, 5, 1];
+        const change = {}; // Ein Objekt zur Verfolgung der Münzen im Wechselgeld.
+    
+        for (const coin of coinValues) {
+            // Schleife durch die Münz-Nennwerte in aufsteigender Reihenfolge.
+    
+            while (amount >= coin) {
+                // Solange der zu wechselnde Betrag größer oder gleich dem aktuellen Münz-Nennwert ist.
+    
+                // Füge die Münze zum Wechselgeld hinzu (wenn noch nicht vorhanden).
+                if (!change[coin]) {
+                    change[coin] = 0;
+                }
+    
+                // Erhöhe die Anzahl der verwendeten Münzen dieses Nennwerts.
+                change[coin]++;
+    
+                // Verringere den zu wechselnden Betrag um den Wert der Münze.
+                amount -= coin;
+            }
+        }
+    
+        return change; // Gibt das Wechselgeld als Objekt zurück.
+    }
+    
+    // Beispiel: Wechselgeld für 41 Cent
+    const change = greedyChange(41);
+    console.log(change); // Ausgabe: { 25: 1, 10: 1, 5: 1, 1: 1 }
